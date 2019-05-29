@@ -8,7 +8,6 @@ import { UsersComponent } from './users/users.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoginRegComponent},
   { path: 'all_songs', component: AllSongsComponent },
-  { path: 'single-song', component:SingleSongComponent},
   { path: 'users', component: UsersComponent},
 
 ];
