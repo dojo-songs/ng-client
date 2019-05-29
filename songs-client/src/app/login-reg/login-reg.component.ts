@@ -37,7 +37,7 @@ export class LoginRegComponent implements OnInit {
       (data) => {
         localStorage.setItem('name', data.first_name);
         localStorage.setItem('user_id', data.id);
-        this.redirectToUsers();
+        this.redirectToAllSongs();
       },
       (errResponse) => {
         this.errors = errResponse.error;
@@ -51,7 +51,7 @@ export class LoginRegComponent implements OnInit {
       (data) => {
         localStorage.setItem('name', data.first_name);
         localStorage.setItem('user_id', data.id);
-        this.redirectToUsers();
+        this.redirectToAllSongs();
       },
       (errResponse) => {
         this.errors = errResponse.error;
@@ -59,7 +59,7 @@ export class LoginRegComponent implements OnInit {
     )
   }
 
-  redirectToUsers() {
+  redirectToAllSongs() {
     this.router.navigate(['/all_songs'])
   }
 }
