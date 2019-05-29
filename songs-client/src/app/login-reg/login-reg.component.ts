@@ -60,6 +60,6 @@ export class LoginRegComponent implements OnInit {
   }
 
   redirectToUsers() {
-    this.router.navigate(['/users'])
+    this.router.navigate(['/all_songs'])
   }
 }
