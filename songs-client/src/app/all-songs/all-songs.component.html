@@ -1,4 +1,4 @@
-<div >
+<div>
   <table>
     <thead>
         <tr>
@@ -10,7 +10,7 @@
     </thead>
     <tr *ngFor = "let song of songs">
       <td>{{ song.artist }}</td>
-      <td><a href='#'>{{ song.title }}</a></td>
+      <td><a href='users' [(ngModel)]='users'>{{ song.title }}</a></td>
       <td>{{ song.numAdded }}</td>
       <td> <button (click)='addToList()'>add</button></td>
     </tr>
@@ -19,8 +19,8 @@
 <div>
   <h3>Add a song</h3>
   <form (submit)='addSong()'>
-    <p>Title: <input type="text" name="title" id="title" [(ngModel)]='addSong.title' placeholder='a title'></p>
-    <p>Artist: <input type="text" name="artist" id="artist" [(ngModel)]='addSong.artist' placeholder='an artist name'></p>
+    <p>Title: <input type="text" name="title" [(ngModel)]='addSong.title' placeholder='a title'></p>
+    <p>Artist: <input type="text" name="artist" [(ngModel)]='addSong.artist' placeholder='an artist name'></p>
     <button type="submit">Add Song</button>
   </form>
 </div>
