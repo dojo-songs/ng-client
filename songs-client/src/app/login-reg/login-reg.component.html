@@ -1,15 +1,16 @@
 <div class="container">
     <div *ngIf='errors' class="errors">
             <ul>
-              <li *ngFor='let error of errors'>{{ error }}</li>
+                <li *ngFor='let error of errors'>{{ error }}</li>
+
             </ul>
           </div>
   <div class="col-10">
   <h1>Registration</h1>
   <form (submit)='submitRegister()'>
-      <p>First Name: <input minlength='3' #first='ngModel' type="text" name="first_name" [(ngModel)]='registerForm.first_name'placeholder="Peter"></p>
-      <p>Last Name: <input minlength='3' #last='ngModel' type="text" name="last_name" [(ngModel)]='registerForm.last_name'placeholder="Parker"></p>
-      <p>E-Mail: <input [(ngModel)]='email' type="text" id="mail" name="email" [(ngModel)]='registerForm.email'placeholder="therealspiderman@mail.com"></p>
+      <p>First Name: <input minlength='3' #first='ngModel' type="text" name="first_name" [(ngModel)]='registerForm.first_name'placeholder="John"></p>
+      <p>Last Name: <input minlength='3' #last='ngModel' type="text" name="last_name" [(ngModel)]='registerForm.last_name'placeholder="Snow"></p>
+      <p>E-Mail: <input [(ngModel)]='email' type="text" id="mail" name="email" [(ngModel)]='registerForm.email'placeholder="kingofthenorth@mail.com"></p>
       <p>Password: <input type="password" [(ngModel)]='pword' name="password" [(ngModel)]='registerForm.password'placeholder="password"></p>
       <p><input type="submit" value="Register"></p>
   </form>

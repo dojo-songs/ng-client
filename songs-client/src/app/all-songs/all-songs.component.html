@@ -1,23 +1,25 @@
-<div class = "navBar">
-  <p> nav bar goes here</p>
-</div>
-
-<div>
-  <p>All the songs in our hub:</p>
-  <table>
+<div class="table-info">
+  <h3>{{ user_id }}'s Playlist</h3>
+  <table class='tab-content'>
     <tr>
-      <th>Artist</th>
-      <th>Title</th>
-      <th>No. of Times Song has been added</th>
-      <th>Add to Playlist</th>
+      <th style="width: 250px">Artist</th>
+      <th style="width: 250px">Title</th>
+      <th style="width: 75px"># of adds</th>
+      <th style="width: 75px">add to playlist</th>
     </tr>
     <tr>
-      <td>Michael Jackson</td>
-      <td>Triller</td>
-      <td>5</td>
-      <td><button>Add</button></td>
+      <td>{{ song.artist }}</td>
+      <td>{{ song.title }}</td>
+      <td>{{ song.playlist }}</td>
+      <td> <button (click)='addToList()'>add</button></td>
     </tr>
   </table>
 </div>
-
-
+<div class="table-active">
+  <h3>Add a song</h3>
+  <form action="">
+    <p>Artist: <input type="text" placeholder='OAR'></p>
+    <p>Title: <input type="text" placeholder='Crazy night of Poker'></p>
+    <button button (click)='addSong()'>Add Song</button>
+  </form>
+</div>
