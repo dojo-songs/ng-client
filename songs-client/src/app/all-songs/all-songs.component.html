@@ -1,25 +1,26 @@
-<div class="table-info">
-  <h3>{{ user_id }}'s Playlist</h3>
-  <table class='tab-content'>
-    <tr>
-      <th style="width: 250px">Artist</th>
-      <th style="width: 250px">Title</th>
-      <th style="width: 75px"># of adds</th>
-      <th style="width: 75px">add to playlist</th>
-    </tr>
-    <tr>
+<div >
+  <table>
+    <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Title</th>
+          <th># of adds</th>
+          <th>add to playlist</th>
+        </tr>
+    </thead>
+    <tr *ngFor = "let song of songs">
       <td>{{ song.artist }}</td>
-      <td>{{ song.title }}</td>
-      <td>{{ song.playlist }}</td>
+      <td><a href='#'>{{ song.title }}</a></td>
+      <td>{{ song.numAdded }}</td>
       <td> <button (click)='addToList()'>add</button></td>
     </tr>
   </table>
 </div>
-<div class="table-active">
+<div>
   <h3>Add a song</h3>
-  <form action="">
-    <p>Artist: <input type="text" placeholder='OAR'></p>
-    <p>Title: <input type="text" placeholder='Crazy night of Poker'></p>
-    <button button (click)='addSong()'>Add Song</button>
+  <form (submit)='addSong()'>
+    <p>Title: <input type="text" name="title" id="title" [(ngModel)]='addSong.title' placeholder='a title'></p>
+    <p>Artist: <input type="text" name="artist" id="artist" [(ngModel)]='addSong.artist' placeholder='an artist name'></p>
+    <button type="submit">Add Song</button>
   </form>
 </div>
