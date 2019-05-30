@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoginRegComponent},
   { path: 'all_songs', component: AllSongsComponent },
   { path: 'users', component: UsersComponent},
-  { path: 'songs/:id',component: SingleSongComponent}
+  { path: 'songs/:id',component: SingleSongComponent},
+  { path: 'user/:id', component: UsersComponent},
 
 ];
 

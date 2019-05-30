@@ -30,6 +30,10 @@ export class UsersService {
     return this.http.post<object>(`${this.baseURL}/songs/add/`, playlistData);
   }
 
+  getUserPlaylist(userPlaylistData: object){
+    return this.http.post<object>(`${this.baseURL}/playlist/`, userPlaylistData)
+  }
+
 
   logout(): void {
     localStorage.clear();

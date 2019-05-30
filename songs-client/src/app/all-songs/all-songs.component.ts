@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AllSongsService } from '../all-songs.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsersService } from '../users.service';
-import { NavbarComponent } from '../navbar/navbar.component'
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 
