@@ -1,1 +1,16 @@
 <app-navbar></app-navbar>
+<div class="user">
+    <h3>{{ name }}'s Playlist</h3>
+    <div class='table-borderless'>
+        <tr>
+        <th style="width: 250px">Artist</th>
+        <th style="width: 250px">Title</th>
+        <th style="width: 75px">Times added</th>
+        </tr>
+        <tr>
+        <td>{{ song.artist }}</td>
+        <td>{{ song.title }}</td>
+        <td>{{ song.playlist }}</td>
+        </tr>
+    </div>
+</div>
