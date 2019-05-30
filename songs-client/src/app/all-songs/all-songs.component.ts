@@ -14,7 +14,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 export class AllSongsComponent implements OnInit {
   userName: string;
   userId: string;
-  mySongs: object[];
+  data: object={};
   
   addSongData: object ={
     title: '',
@@ -72,8 +72,8 @@ export class AllSongsComponent implements OnInit {
     .subscribe(
       data => {
         console.log('got all songs');
-        this.mySongs = data;
-        console.log(this.mySongs);
+        this.data = data;
+        console.log(this.data);
       },
       errors => {
         console.log('error getting songs');

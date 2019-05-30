@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'all_songs', component: AllSongsComponent },
   { path: 'users', component: UsersComponent},
   { path: 'songs/:id',component: SingleSongComponent},
-  { path: 'user/:id', component: UsersComponent},
+  { path: 'users/:id', component: UsersComponent},
 
 ];
 
