@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AllSongsService } from '../all-songs.service';
-
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsersService } from '../users.service';
+import { NavbarComponent } from '../navbar/navbar.component'
 
 
 
@@ -13,12 +13,18 @@ import { UsersService } from '../users.service';
 })
 export class AllSongsComponent implements OnInit {
   userName: string;
-  userId: Number;
+  userId: string;
   mySongs: object[];
+  
   addSongData: object ={
     title: '',
     artist: ''
   }
+  addSongPlaylistData: object = {
+    user_id:'',
+    song_id:''
+  }
+
   errors:string[];
 
 
@@ -31,6 +37,15 @@ export class AllSongsComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+    this.userId = localStorage.getItem('user_id');
+    if(this.userId == null){
+      console.log('user not logged in');
+      this.router.navigate(['main'])
+    }
+    else{
+      this.userName = localStorage.getItem('first_name');
+      this.addSongPlaylistData['user_id'] = this.userId;
+    }
     this.getSongs();
   }
 
@@ -39,7 +54,7 @@ export class AllSongsComponent implements OnInit {
     .subscribe(
       data => {
         console.log('added song to db');
-        console.log(data);
+        console.log(data); 
         this.getSongs()
       },
       errors => {
@@ -62,6 +77,23 @@ export class AllSongsComponent implements OnInit {
       },
       errors => {
         console.log('error getting songs');
+        console.log(errors);
+        this.errors = errors;
+      }
+    )
+  }
+  addSongToPlaylist(songId: string){
+    this.addSongPlaylistData['song_id'] = songId;
+    console.log(this.addSongPlaylistData);
+    this.userService.addToList(this.addSongPlaylistData)
+    .subscribe(
+      data => {
+        console.log('successfully added song to user playlist');
+        console.log(data);
+        this.getSongs();
+      },
+      errors => {
+        console.log('error adding song to playlist');
         console.log(errors);
         this.errors = errors;
       }

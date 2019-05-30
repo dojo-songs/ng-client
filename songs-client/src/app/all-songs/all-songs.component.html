@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <div>
+  <h4>All songs in our hub:</h4>
   <table>
     <thead>
         <tr>
@@ -11,9 +12,9 @@
     </thead>
     <tr *ngFor = "let song of mySongs">
       <td>{{ song.fields.artist }}</td>
-      <td><a href='users'>{{ song.fields.title }}</a></td>
+      <td><a [routerLink]="['/songs', song.id]">{{song.fields.title}}</a></td>
       <td>{{ song.fields.numAdded.length }}</td>
-      <td> <button (click)='addToList()'>add</button></td>
+      <td> <button (click)='addSongToPlaylist(song.id)'>add</button></td>
     </tr>
   </table>
 </div>

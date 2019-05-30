@@ -17,6 +17,7 @@ export class UsersService {
   })
   baseURL: string = 'http://localhost:8000/users'
   constructor(private http: HttpClient) { }
+
   createUser(userData: object): Observable<any> {
     return this.http.post<object>(`${this.baseURL}/create/`, userData);
   }
@@ -25,8 +26,12 @@ export class UsersService {
     return this.http.post<object>(`${this.baseURL}/login/`, loginData);
   }
 
-  logout() {
-    localStorage.clear();
+  addToList(playlistData: object) {
+    return this.http.post<object>(`${this.baseURL}/songs/add/`, playlistData);
+  }
 
+
+  logout(): void {
+    localStorage.clear();
   }
 }
