@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AllSongsService } from '../all-songs.service';
 
+import { Router, ActivatedRoute } from '@angular/router';
+import { UsersService } from '../users.service';
+
 
 
 @Component({
@@ -18,10 +21,14 @@ export class AllSongsComponent implements OnInit {
   }
   errors:string[];
 
-  constructor(private allsongService: AllSongsService) {
-    this.userName = 'Cam';
-    this.userId = 1;
-   }
+
+
+  constructor(
+    private allsongService: AllSongsService,
+    private userService: UsersService,
+    private route: ActivatedRoute,
+    private router: Router
+    ) {}
 
   ngOnInit() {
     this.getSongs();

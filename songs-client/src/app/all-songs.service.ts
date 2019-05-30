@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AllSongsService {
-  baseUrl: string = 'http://localhost:8000/songs'
+  baseUrl: string = 'http://localhost:8000/users/all_songs'
   constructor(private http: HttpClient) { }
 
   createSong(addSongData: object): Observable<object> {
@@ -16,5 +16,9 @@ export class AllSongsService {
 
   getSongs(): Observable<any[]>{
     return this.http.get<any[]>(`${this.baseUrl}/list/`);
+  }
+
+  getSongUsers(getSongUserData: object): Observable<any[]>{
+    return this.http.post<any[]>(`${this.baseUrl}/users/`, getSongUserData);
   }
 }

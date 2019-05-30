@@ -10,10 +10,6 @@ import { LoginRegComponent } from './login-reg/login-reg.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AllSongsComponent } from './all-songs/all-songs.component';
 import { SingleSongComponent } from './single-song/single-song.component';
-<<<<<<< HEAD
-
-=======
->>>>>>> e1b23db29460d1c47ac9e5387cf98264696c0ef3
 
 @NgModule({
   declarations: [
@@ -23,10 +19,6 @@ import { SingleSongComponent } from './single-song/single-song.component';
     NavbarComponent,
     AllSongsComponent,
     SingleSongComponent,
-<<<<<<< HEAD
-
-=======
->>>>>>> e1b23db29460d1c47ac9e5387cf98264696c0ef3
   ],
   imports: [
     BrowserModule,
